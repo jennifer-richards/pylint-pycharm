@@ -75,6 +75,9 @@ public class PylintRunner {
     }
 
     public static boolean isPylintPathValid(String pylintPath, Project project) {
+        if (StringUtil.isEmptyOrSpaces(pylintPath)) {
+            return false;
+        }
         String absolutePath = new File(pylintPath).getAbsolutePath();
         if (!absolutePath.equals(pylintPath)) {
             pylintPath = project.getBasePath() + File.separator + pylintPath;
