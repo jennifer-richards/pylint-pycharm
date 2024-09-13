@@ -16,6 +16,7 @@
 
 package com.leinardi.pycharm.pylint.actions;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.diagnostic.Logger;
@@ -105,5 +106,9 @@ public abstract class BaseAction extends DumbAwareAction {
             }
         }
         return result.get();
+    }
+
+    public @NotNull ActionUpdateThread getActionUpdateThread() {
+        return ActionUpdateThread.BGT;
     }
 }
