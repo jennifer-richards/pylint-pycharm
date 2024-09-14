@@ -108,7 +108,7 @@ public abstract class BaseAction extends DumbAwareAction {
         return result.get();
     }
 
-    public @NotNull ActionUpdateThread getActionUpdateThread() {
+    @Override public @NotNull ActionUpdateThread getActionUpdateThread() {
         return ActionUpdateThread.BGT;
     }
 }
